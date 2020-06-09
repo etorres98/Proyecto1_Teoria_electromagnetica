@@ -380,10 +380,10 @@ x2=r2.*cos(ang)*sin(pi);
 y2=r2.*sin(ang)*sin(pi);
 
 
-zin = ((-3/(2*epsi)).*r).*R.*cos(ang) + (-1/(3*epsi*R^2)).*r.^3;
+zin = ((3/(10*epsi)).*r).*cos(ang) + (-12/(35*epsi)).*r.^3.*((3.*cos(ang)+5.*cos(ang.*3)).*(1/8));
 [px,py] = gradient(zin,.2,.2);
 
-zout= ((3*R^4./(2*epsi.*r2.^2))).*cos(ang) + ((R^5./(3*epsi.*r2.^3)));
+zout= ((3*R^3./(10*epsi.*r2.^2))).*cos(ang) + ((-12.*R^7./(35*epsi.*r2.^4))).*((3.*cos(ang)+5.*cos(ang.*3)).*(1/8));
 [px2,py2] = gradient(zout,.2,.2);
 
 figure(9)
